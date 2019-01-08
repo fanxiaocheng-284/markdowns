@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #img,#img1 {
+      display: block;
+      position: relative;
+      border: 1px solid black;
+    }
+    #img {
+    }
+  </style>
+</head>
+<body>
+  <img id="img" src="1.gif" alt="">
+  <img id="img1" src="1.gif" alt="">
+  <script>
+    const img = document.getElementById('img');
+    const img1 = document.getElementById('img1');
+    img.countLeft = 0;
+    img1.countLeft = 0;
+    const move = (image) => {
+      image.countLeft++;
+      if (image.countLeft >= 400) {
+        image.countLeft = 0;
+      }
+      image.style.left = image.countLeft + 'px';
+    };
+    const handleMove = () => {
+      move(img);
+      requestAnimationFrame(handleMove);
+    };
+    const handleMove1 = () => {
+      move(img1);
+      setTimeout(handleMove1, 1000/60);
+    };
+    handleMove();
+    handleMove1();
+  </script>
+</body>
+</html>

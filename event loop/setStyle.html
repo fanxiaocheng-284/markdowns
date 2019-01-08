@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #img {
+      display: block;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <img id="img" src="1.gif" alt="">
+  <input type="button" id="button" value="点击">
+  <script>
+    const img = document.getElementById('img');
+    const button = document.getElementById('button');
+    button.onclick = () => {
+      console.log(img.style.transform);
+      img.style.transform = "translate3d(1000px, 0px, 0px)";
+      img.style.transition = "all 1s ease-in-out";
+
+      requestAnimationFrame(() => {
+        img.style.transform = "translate3d(500px, 0px, 0px)";
+      });
+      console.log(img.style.transform);
+    };
+  </script>
+</body>
+</html>

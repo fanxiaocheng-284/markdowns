@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const fib = n => {
+      if (n <= 1) {
+        return 1
+      } else {
+        return fib(n - 1) + fib(n - 2)
+      }
+    }
+    console.now = (text) => {
+      console.log(`${text} ${new Date().toLocaleString()}`)
+    }
+    function setTimeout0() {
+      console.now(0)
+      document.body.style.backgroundColor = 'red'
+      console.now(1)
+      fib(40)
+      console.now(2)
+      alert(3);
+    }
+    function setTimeout1() {
+      alert(4);
+      console.now(3)
+      fib(40)
+      console.now(4)
+    }
+    setTimeout0();
+    setTimeout1();
+    document.body.style.backgroundColor = 'green'
+    /*
+    setTimeout(function setTimeout1() {
+      console.now(5)
+      fib(45)
+      console.now(6)
+    }, 1001)
+    setTimeout(function setTimeout1() {
+      console.now(7)
+      fib(45)
+      console.now(8)
+    }, 3001)
+    */
+  </script>
+</body>
+</html>

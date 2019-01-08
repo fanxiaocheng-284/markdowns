@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const arr = [1,2,3,4,5,6,7,8];
+    const wait = (time, cb) => {
+      if (time >= 0) {
+        setTimeout(() => {
+          cb();
+        }, time);
+        return;
+      }
+      cb();
+    };
+    const log = (num) => {
+      const promise = new Promise((resolve) => {
+        wait(num - 2, () => {
+          console.log(num);
+          console.log(arr);
+          resolve();
+        });
+      });
+      promise -> array;
+      cb, time -> doingList;
+
+    };
+    doingList 
+    return;
+    for(let i=0;i<arr.length;i++) {
+      log(arr[i]);
+    }
+    array
+    Promise.all(array).then(()=> {
+      //clear
+      doingList =[]
+      array =[]
+    })
+    /**
+    */
+
+    /*
+    for(let num=1;num<=8;num++) {
+      log(num);
+    }
+    */
+
+
+    /**
+    arr.map((num) => {
+      log(num);
+    });
+    */
+  </script>
+</body>
+</html>
